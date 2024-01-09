@@ -7,5 +7,9 @@ const getAllActivities = () => {
     return request.then(response => response.data)
 }
 
+const updateActivity = (id, updatedActivity) => {
+    const request = axios.patch(`${baseUrl}activities/${id}`, updatedActivity)
+    return request.then(response => response.data)
+}
 
-export default { getAllActivities }
+export default { getAllActivities, updateActivity }
