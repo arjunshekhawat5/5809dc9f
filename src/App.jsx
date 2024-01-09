@@ -2,16 +2,19 @@ import { useEffect, useState } from 'react'
 import activityService from '../services/activity'
 import ActivityList from '../components/ActivityList'
 import Tabs from '../components/Tabs'
+import UpdateAll from '../components/UpdateAll'
 
 function App() {
   const [activities, setActivities] = useState([])
   const [archiveTab, setArchiveTab] = useState(false)
 
+  //get all activities from the API for the first render
   useEffect(() => {
     console.log('App.js useEffect()')
     getActivities()
   }, [])
 
+  //reference call object to filter bad data
   const referenceActivity = {
     "direction": "outbound",
     "from": 100000,
@@ -25,6 +28,7 @@ function App() {
   }
   const referenceActivityFields = Object.keys(referenceActivity)
 
+  //function to filter bad data with missing fields
   const validActivity = (activity) => {
     const activityFields = Object.keys(activity)
     //console.log(activityFields, referenceActivityFields)
@@ -34,6 +38,7 @@ function App() {
     )
   }
 
+  //get all activities from the API
   const getActivities = () => {
     activityService
       .getAllActivities()
@@ -48,8 +53,9 @@ function App() {
       })
   }
 
-  const archiveHandler = (id, activity) => {
-    console.log('archiving activity', id, activity)
+  //update the archive status of an activity based on the current tab
+  const updateArchiveStatus = (id, activity) => {
+    console.log('updating activity', id, activity)
     const updatedActivity = { ...activity, is_archived: !archiveTab }
     activityService
       .updateActivity(id, updatedActivity)
@@ -62,18 +68,39 @@ function App() {
       })
   }
 
+  //update archive status of all activities
+  const updateArchiveStatusAll = (updatedActivities) => {
+    for (const activity of updatedActivities) {
+      setTimeout(() => updateArchiveStatus(activity.id, activity), 10)
+    }
+  }
+
+  //onClick handler for archive button/ unarchive button
+  const archiveHandler = (id, activity) => {
+    updateArchiveStatus(id, activity)
+  }
+
+  //onClick handler for archive all/ unarchive all button
+  const archiveAllHandler = (event) => {
+    console.log('updating all activities...', archiveTab)
+    const updatedActivities = activities.map(activity => ({ ...activity, is_archived: !archiveTab }))
+    updateArchiveStatusAll(updatedActivities)
+  }
+
+  //onclick handler for tabs (show activities/ show archived) button
   const tabHandler = (event) => {
-    console.log('tabHandler', event.target.textContent)
+    //console.log('tabHandler', event.target.textContent)
     const isArchiveTab = event.target.textContent === 'Show Archived'
     setArchiveTab(isArchiveTab)
   }
 
+  //filtering activities to show based on the tab status
   const activitiesToShow = activities.filter(activity => archiveTab ? activity.is_archived : !activity.is_archived)
-  //console.log('unarchivedActivities', unarchivedActivities)
-  //console.log('archivedActivities', archivedActivities)
+
   return (
     <div>
       <Tabs tabHandler={tabHandler} />
+      <UpdateAll updateAllClickHandler={() => { archiveAllHandler(activities) }} archiveTab={archiveTab} />
       <ActivityList activities={activitiesToShow} archiveTab={archiveTab} archiveClickHandler={archiveHandler} />
     </div>
   )
