@@ -1,8 +1,12 @@
 {
-  "name": "aircall-speerio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "frontend-hiring-challenge",
+  "version": "1.0.0",
+  "description": "Leap test",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "",
+  "private": false,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
