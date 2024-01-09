@@ -4,6 +4,8 @@ const corsAnywhereURL = 'https://charming-bat-singlet.cyclic.app/';
 const apiBaseURL = 'https://cerulean-marlin-wig.cyclic.app/';
 
 const baseUrl = "https://cerulean-marlin-wig.cyclic.app/"
+
+//corsAnywhere url
 //const baseUrl = `${corsAnywhereURL}${apiBaseURL}`
 
 const getAllActivities = () => {

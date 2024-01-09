@@ -55,12 +55,12 @@ function App() {
 
   //update the archive status of an activity based on the current tab
   const updateArchiveStatus = (id, activity) => {
-    console.log('updating activity', id, activity)
+    console.log('updating activity...', id)
     const updatedActivity = { ...activity, is_archived: !archiveTab }
     activityService
       .updateActivity(id, updatedActivity)
       .then(updatedActivity => {
-        console.log('updated activity successfully', updatedActivity)
+        console.log('updated activity successfully....', updatedActivity)
         getActivities()
       })
       .catch(error => {
@@ -82,7 +82,7 @@ function App() {
 
   //onClick handler for archive all/ unarchive all button
   const archiveAllHandler = (event) => {
-    console.log('updating all activities...', archiveTab)
+    console.log('updating all activities...')
     const updatedActivities = activities.map(activity => ({ ...activity, is_archived: !archiveTab }))
     updateArchiveStatusAll(updatedActivities)
   }
