@@ -1,4 +1,4 @@
-const ActivityListItem = ({ id, activity }) => {
+const ActivityListItem = ({ id, activity, archiveTab, archiveClickHandler }) => {
     let callInfo = ''
 
     if (activity.call_type === 'missed') {
@@ -11,8 +11,9 @@ const ActivityListItem = ({ id, activity }) => {
 
     return (
         <li key={id}>
-            <h3>{callInfo}</h3>
-            <p>Duration: {activity.duration} seconds, {activity.direction} </p>
+            <h4>{callInfo}</h4>
+            <p>Duration: {activity.duration} seconds, {activity.direction}</p>
+            <button onClick={archiveClickHandler}>{archiveTab ? 'Unarchive activity' : 'Archive activity'}</button>
         </li>
     )
 }
