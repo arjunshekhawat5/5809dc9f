@@ -1,0 +1,25 @@
+/* UpdateAll.css */
+
+.update-all-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E5E7EB;
+    /* Add your desired background color */
+    padding: 10px;
+    text-align: center;
+}
+
+.update-all-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    width: 50%;
+    color: #E5E7EB;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+}
