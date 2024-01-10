@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import activityService from './services/activity'
-import ActivityList from './components/ActivityList'
-import Tabs from './components/Tabs'
-import UpdateAll from './components/UpdateAll'
+import ActivityList from './components/ActivityList/ActivityList'
+import Tabs from './components/Tabs/Tabs'
+import UpdateAll from './components/UpdateAll/UpdateAll'
 
 function App() {
   const [activities, setActivities] = useState([])

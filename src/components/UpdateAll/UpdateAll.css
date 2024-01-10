@@ -1,5 +1,3 @@
-/* UpdateAll.css */
-
 .update-all-container {
     display: flex;
     justify-content: center;
@@ -8,8 +6,7 @@
     left: 0;
     width: 100%;
     background-color: #E5E7EB;
-    /* Add your desired background color */
-    padding: 10px;
+    padding: 30px;
     text-align: center;
 }
 
