@@ -5,7 +5,7 @@ import axios from 'axios'
 const baseUrl = "https://cerulean-marlin-wig.cyclic.app/"
 
 //corsAnywhere url
-//const baseUrl = `${corsAnywhereURL}${baseURL}`
+//newBaseUrl = `${corsAnywhereURL}${baseUrl}`
 
 const getAllActivities = () => {
     const request = axios.get(`${baseUrl}activities`)

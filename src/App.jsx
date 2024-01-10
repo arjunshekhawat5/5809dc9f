@@ -70,9 +70,7 @@ function App() {
 
   //update archive status of all activities
   const updateArchiveStatusAll = (updatedActivities) => {
-    for (const activity of updatedActivities) {
-      setTimeout(() => updateArchiveStatus(activity.id, activity), 10)
-    }
+    Promise.all(updatedActivities.map(activity => updateArchiveStatus(activity.id, activity)));
   }
 
   //onClick handler for archive button/ unarchive button
