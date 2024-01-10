@@ -1,0 +1,30 @@
+.navigation-bar {
+    background-color: #1F2937;
+    overflow: hidden;
+}
+
+.navigation-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation-item {
+    width: 50%;
+    border: none;
+}
+
+.navigation-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #F9FAF8;
+    font-weight: 600;
+    font-size: 32px;
+    background-color: #1F2937;
+    border: none;
+    cursor: pointer;
+}
