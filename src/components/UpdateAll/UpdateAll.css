@@ -5,14 +5,14 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #E5E7EB;
+    background-color: none;
     padding: 30px;
     text-align: center;
 }
 
 .update-all-button {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #0b2541;
     width: 50%;
     color: #E5E7EB;
     border: none;
