@@ -1,0 +1,20 @@
+/* ActivityList.css */
+
+.activity-list-header {
+    text-align: center;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.zero-activities {
+    color: red;
+    text-align: center;
+    border: solid 2px;
+    font-size: 36px;
+    border-radius: 5px;
+    padding: 50px 100px;
+    margin: 104px;
+}

@@ -1,0 +1,79 @@
+/* ActivityListItem.css */
+
+div.activity-item {
+    display: flex;
+    background-color: #3882F6;
+    margin: 32px 108px;
+    padding: 32px 54px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.activity-info {
+    flex-direction: column;
+    align-items: flex-start;
+    color: #E5E7EB;
+    flex: 2;
+}
+
+.info-heading {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.activity-detail {
+    font-size: 18px;
+    font-weight: 300
+}
+
+.archive-button button {
+    border: 2px solid #E5E7EB;
+    background-color: #3882F6;
+    color: #F9FAF8;
+    padding: 8px 32px;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*
+.activity-info {
+    margin-bottom: 5px;
+    align-self: flex-start;
+    padding: 25px;
+}
+
+.activity-details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    align-self: flex-end;
+    padding-right: 25px;
+}
+
+.archive-button {
+    background: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1px;
+    margin: 0px 100px 0px 100px;
+    border-radius: 10px;
+}
+*/
