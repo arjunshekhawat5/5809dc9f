@@ -1,12 +1,11 @@
 import axios from 'axios'
 
-const corsAnywhereURL = 'https://charming-bat-singlet.cyclic.app/';
-const apiBaseURL = 'https://cerulean-marlin-wig.cyclic.app/';
+//const corsAnywhereURL = 'https://charming-bat-singlet.cyclic.app/';
 
 const baseUrl = "https://cerulean-marlin-wig.cyclic.app/"
 
 //corsAnywhere url
-//const baseUrl = `${corsAnywhereURL}${apiBaseURL}`
+//const baseUrl = `${corsAnywhereURL}${baseURL}`
 
 const getAllActivities = () => {
     const request = axios.get(`${baseUrl}activities`)

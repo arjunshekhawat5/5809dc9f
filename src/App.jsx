@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import activityService from '../services/activity'
-import ActivityList from '../components/ActivityList'
-import Tabs from '../components/Tabs'
-import UpdateAll from '../components/UpdateAll'
+import activityService from './services/activity'
+import ActivityList from './components/ActivityList'
+import Tabs from './components/Tabs'
+import UpdateAll from './components/UpdateAll'
 
 function App() {
   const [activities, setActivities] = useState([])
@@ -81,7 +81,7 @@ function App() {
   }
 
   //onClick handler for archive all/ unarchive all button
-  const archiveAllHandler = (event) => {
+  const archiveAllHandler = () => {
     console.log('updating all activities...')
     const updatedActivities = activities.map(activity => ({ ...activity, is_archived: !archiveTab }))
     updateArchiveStatusAll(updatedActivities)
